@@ -1,4 +1,4 @@
-const Header = () => {
+const Footer = () => {
   return (
     <section>
       <div>Здесь будут ссылки на соцсети</div>
@@ -6,4 +6,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;
