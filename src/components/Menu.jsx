@@ -1,8 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
-import { BsCart3 } from "react-icons/bs";
-import { useState } from "react";
+import Cart from "./Cart";
 
-const Menu = () => {
+const Menu = ({ cartProducts, products, handleRemoveFromCart }) => {
   return (
     <header>
       <nav>
@@ -16,12 +15,17 @@ const Menu = () => {
         <NavLink to="/delivery">Доставка и оплата</NavLink>
         <NavLink to="/about">О компании</NavLink>
         <button>вход</button>
-        <BsCart3 />
 
         <div>
           <p>С 10 до 20, ежедневно</p>
           <Link>8 812 450-25-25</Link>
         </div>
+
+        <Cart
+          cartProducts={cartProducts}
+          products={products}
+          handleRemoveFromCart={handleRemoveFromCart}
+        />
       </nav>
     </header>
   );
