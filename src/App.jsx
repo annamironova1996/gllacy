@@ -1,63 +1,186 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 import MainLayout from "./layouts/MainLayout";
-import getProducts from "./data/getProducts";
 import Home from "./components/Home";
 import Catalog from "./components/Catalog";
 import Delivery from "./components/Delivery";
 import About from "./components/About";
 import "./App.css";
 
-function App() {
-  const [cartProducts, setCartProducts] = useState([]);
-  const [products, setProducts] = useState(getProducts());
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orders: [],
+      items: [
+        {
+          id: 1,
+          img: "orange.png",
+          category: "creamy",
+          title: "Сливочное с апельсиновым джемом и цитрусовой стружкой",
+          price: "310",
+        },
+        {
+          id: 2,
+          img: "chocolate.png",
+          category: "creamy",
+          title: "Сливочно-кофейное с кусочками шоколада",
+          price: "380",
+        },
+        {
+          id: 3,
+          img: "strawberry.png",
+          category: "creamy",
+          title: "Сливочно-клубничное с присыпкой из белого шоколада",
+          price: "355",
+        },
+        {
+          id: 4,
+          img: "caramel.png",
+          category: "creamy",
+          title: "Сливочное крем-брюле с карамельной подливкой",
+          price: "415",
+        },
 
-  const handleAddProductToCart = (productID) => {
-    setCartProducts([...cartProducts, productID]);
-  };
-  const handleRemoveFromCart = (productID) => {
-    const newCartProducts = cartProducts.filter((id) => id !== productID);
-    setCartProducts(newCartProducts);
-  };
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <MainLayout
-                products={products}
-                onChange={() => handleRemoveFromCart()}
-              />
-            }
-          >
+        {
+          id: 5,
+          img: "cowberry.png",
+          category: "creamy",
+          title: "Сливочное с брусничным джемом",
+          price: "325",
+        },
+        {
+          id: 6,
+          img: "blueberry.png",
+          category: "creamy",
+          title: "Сливочно-черничное с цельными ягодами черники",
+          price: "410",
+        },
+        {
+          id: 7,
+          img: "lemon.png",
+          category: "creamy",
+          title: "Сливочно-лимонное с карамельной присыпкой",
+          price: "375",
+        },
+        {
+          id: 8,
+          img: "chocolate_shaving.png",
+          category: "creamy",
+          title: "Сливочное с шоколадной стружкой",
+          price: "320",
+        },
+        {
+          id: 9,
+          img: "vanilla.png",
+          category: "creamy",
+          title: "Сливочно-ванильное с кусочками шоколада",
+          price: "440",
+        },
+        {
+          id: 10,
+          img: "menthol.png",
+          category: "creamy",
+          title: "Сливочное с ментоловым сиропом",
+          price: "435",
+        },
+        {
+          id: 11,
+          img: "dark_chokolate.png",
+          category: "creamy",
+          title: "Сливочное с кусочками черного шоколада",
+          price: "355",
+        },
+        {
+          id: 12,
+          img: "mint.png",
+          category: "creamy",
+          title: "Сливочное с мятным сиропом",
+          price: "420",
+        },
+      ],
+      currentItems: [],
+      showFullItem: false,
+    };
+    this.state.currentItems = this.state.items;
+    this.addToOrder = this.addToOrder.bind(this);
+    this.deleteOrder = this.deleteOrder.bind(this);
+    this.chooseCategory = this.chooseCategory.bind(this);
+    this.onShowItem = this.onShowItem.bind(this);
+  }
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
             <Route
-              index
-              element={<Home />}
-            />
-            <Route
-              path="catalog"
+              path="/"
               element={
-                <Catalog
-                  products={products}
-                  onChange={() => handleAddProductToCart}
+                <MainLayout
+                  orders={this.state.orders}
+                  onDelete={this.deleteOrder}
                 />
               }
-            />
-            <Route
-              path="delivery"
-              element={<Delivery />}
-            />
-            <Route
-              path="about"
-              element={<About />}
-            />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+            >
+              <Route
+                index
+                element={<Home />}
+              />
+              <Route
+                path="catalog"
+                element={
+                  <Catalog
+                    items={this.state.currentItems}
+                    onAdd={this.addToOrder}
+                    showFullItem={this.state.showFullItem}
+                    onShowItem={this.onShowItem}
+                    chooseCategory={this.chooseCategory}
+                    item={this.state.fullItem}
+                  />
+                }
+              />
+              <Route
+                path="delivery"
+                element={<Delivery />}
+              />
+              <Route
+                path="about"
+                element={<About />}
+              />
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    );
+  }
+
+  onShowItem(item) {
+    this.setState({ fullItem: item });
+    this.setState({ showFullItem: !this.state.showFullItem });
+  }
+
+  chooseCategory(category) {
+    if (category === "all") {
+      this.setState({ currentItems: this.state.items });
+      return;
+    }
+
+    this.setState({
+      currentItems: this.state.items.filter((el) => el.category === category),
+    });
+  }
+
+  deleteOrder(id) {
+    this.setState({ orders: this.state.orders.filter((el) => el.id !== id) });
+  }
+
+  addToOrder(item) {
+    let isInArray = false;
+    this.state.orders.forEach((el) => {
+      if (el.id === item.id) isInArray = true;
+    });
+    if (!isInArray) this.setState({ orders: [...this.state.orders, item] });
+  }
 }
 
 export default App;
