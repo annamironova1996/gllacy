@@ -1,0 +1,21 @@
+.catalog a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.catalog-navigation {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.catalog-icon {
+  margin: 0 10px;
+}
+
+.catalog-items {
+  display: flex;
+  flex-wrap: wrap;
+}

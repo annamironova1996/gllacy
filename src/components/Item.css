@@ -1,0 +1,34 @@
+.catalog-item {
+  padding: 0 20px;
+  position: relative;
+  margin-top: 40px;
+  width: 25%;
+}
+
+.catalog-item-price {
+  top: 200px;
+  position: absolute;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.catalog-item-title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.catalog-item-button {
+  width: 200px;
+  height: 44px;
+  border: none;
+  background-color: #e84d37;
+  border-radius: 30px;
+  background-image: linear-gradient(0deg, #e74a35 0%, #f26843 100%);
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.75);
+  box-shadow: 0px 1px 2px 0px #ac1000;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fefefe;
+}

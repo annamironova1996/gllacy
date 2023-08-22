@@ -1,0 +1,30 @@
+.hit-item {
+  position: relative;
+  width: 20%;
+}
+
+.hit-item-icon {
+  position: absolute;
+}
+
+.hit-item-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 17px;
+}
+
+.hit-item-imag {
+  width: 100%;
+  height: 100%;
+}
+
+.hit-item-price {
+  position: absolute;
+  top: 160px;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.hit-item-weight {
+  font-size: 30px;
+}

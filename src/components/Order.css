@@ -1,0 +1,24 @@
+.order-item {
+  font-weight: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-item p,
+.order-item h3 {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.order-item h3 {
+  width: 50%;
+  text-align: left;
+  line-height: 12px;
+}
+
+.order-item-close {
+  border: none;
+  background-color: transparent;
+}

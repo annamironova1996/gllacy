@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./InputSubscription.css";
 
 const InputSubscription = () => {
   const [email, setEmail] = useState(" ");
@@ -7,16 +8,31 @@ const InputSubscription = () => {
     event.preventDefault();
   }
   return (
-    <form onSubmit={handleFormSubmit}>
-      <label>
-        email:
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        ></input>
+    <form
+      className="subscription"
+      onSubmit={handleFormSubmit}
+    >
+      <label
+        for="email"
+        className="visually-hidden"
+      >
+        email@example.com
       </label>
-      <button type="submit">Отправить</button>
+      <input
+        className="subscription-input"
+        id="email"
+        type="email"
+        placeholder="email@example.com"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      ></input>
+
+      <button
+        className="subscription-button"
+        type="submit"
+      >
+        Отправить
+      </button>
     </form>
   );
 };

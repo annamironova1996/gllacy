@@ -1,0 +1,22 @@
+.subscription-input {
+  margin-top: 38px;
+  padding-left: 14px;
+  padding-right: 14px;
+  width: 360px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid rgba(178, 178, 178, 0.51);
+}
+
+.subscription-button {
+  width: 129px;
+  height: 44px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e84d37;
+  background-image: linear-gradient(0deg, #e74a35 0%, #f26843 100%);
+  font-weight: 700;
+  color: #fefefe;
+  margin-left: 11px;
+}

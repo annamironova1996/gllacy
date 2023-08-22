@@ -17,6 +17,7 @@ class App extends React.Component {
           id: 1,
           img: "orange.png",
           category: "creamy",
+          status: "hit",
           title: "Сливочное с апельсиновым джемом и цитрусовой стружкой",
           price: "310",
         },
@@ -24,6 +25,7 @@ class App extends React.Component {
           id: 2,
           img: "chocolate.png",
           category: "creamy",
+          status: "hit",
           title: "Сливочно-кофейное с кусочками шоколада",
           price: "380",
         },
@@ -31,6 +33,7 @@ class App extends React.Component {
           id: 3,
           img: "strawberry.png",
           category: "creamy",
+          status: "hit",
           title: "Сливочно-клубничное с присыпкой из белого шоколада",
           price: "355",
         },
@@ -38,6 +41,7 @@ class App extends React.Component {
           id: 4,
           img: "caramel.png",
           category: "creamy",
+          status: "hit",
           title: "Сливочное крем-брюле с карамельной подливкой",
           price: "415",
         },
@@ -46,6 +50,7 @@ class App extends React.Component {
           id: 5,
           img: "cowberry.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочное с брусничным джемом",
           price: "325",
         },
@@ -53,6 +58,7 @@ class App extends React.Component {
           id: 6,
           img: "blueberry.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочно-черничное с цельными ягодами черники",
           price: "410",
         },
@@ -60,13 +66,15 @@ class App extends React.Component {
           id: 7,
           img: "lemon.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочно-лимонное с карамельной присыпкой",
           price: "375",
         },
         {
           id: 8,
-          img: "chocolate_shaving.png",
+          img: "chocolate_shavings.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочное с шоколадной стружкой",
           price: "320",
         },
@@ -74,6 +82,7 @@ class App extends React.Component {
           id: 9,
           img: "vanilla.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочно-ванильное с кусочками шоколада",
           price: "440",
         },
@@ -81,13 +90,15 @@ class App extends React.Component {
           id: 10,
           img: "menthol.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочное с ментоловым сиропом",
           price: "435",
         },
         {
           id: 11,
-          img: "dark_chokolate.png",
+          img: "dark_chocolate.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочное с кусочками черного шоколада",
           price: "355",
         },
@@ -95,6 +106,7 @@ class App extends React.Component {
           id: 12,
           img: "mint.png",
           category: "creamy",
+          status: "not-a-hit",
           title: "Сливочное с мятным сиропом",
           price: "420",
         },
@@ -124,7 +136,7 @@ class App extends React.Component {
             >
               <Route
                 index
-                element={<Home />}
+                element={<Home items={this.state.currentItems} />}
               />
               <Route
                 path="catalog"
