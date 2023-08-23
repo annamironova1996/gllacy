@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 37px;
+  padding-bottom: 37px;
+  padding-left: 28px;
+}
+
+.footer-wrapper-icon {
+  display: flex;
+}
+
+.footer-icon {
+  margin: 0 5px;
+}
+
+.footer-wrapper-link {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+}

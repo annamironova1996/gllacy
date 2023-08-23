@@ -1,0 +1,24 @@
+.categories-button {
+  margin-top: 20px;
+}
+
+.categories-button {
+  width: 144px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.categories-button:hover {
+  width: 144px;
+  height: 36px;
+  opacity: 0.91;
+  background-color: #ffffff;
+  color: #323232;
+  font-weight: 500;
+  font-size: 16px;
+}

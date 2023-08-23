@@ -5,6 +5,10 @@
   color: #ffffff;
 }
 
+.catalog-categories {
+  text-align: left;
+}
+
 .catalog-navigation {
   display: flex;
   justify-content: start;
@@ -16,6 +20,7 @@
 }
 
 .catalog-items {
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
 }

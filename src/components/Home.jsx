@@ -142,7 +142,6 @@ const Home = ({ items }) => {
               height="100%"
               allowfullscreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
           <div className="home-contacts">
@@ -153,16 +152,23 @@ const Home = ({ items }) => {
             <h2>
               Адрес главного офиса
               <br /> и офлайн-магазина:
-              <br />
-              <b>ул.Большая Конюшенная</b>
+              <address className="home-contacts-address">
+                ул.Большая Конюшенная
+                <br />
+                19/8, Санкт-Петербург
+              </address>
             </h2>
-            <p>
+            <ul>
               Для заказов по телефону:
-              <br />
-              <b>8 812 450-25-25</b>
-              <br />
-              (с 10 до 20 ежедневно)
-            </p>
+              <li className="home-contacts-telephone">8 812 450-25-25</li>
+              <li>(с 10 до 20 ежедневно)</li>
+            </ul>
+            <button
+              className="home-contacts-button"
+              type="button"
+            >
+              Форма обратной связи
+            </button>
           </div>
         </section>
       </div>

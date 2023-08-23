@@ -27,8 +27,10 @@ export class Catalog extends Component {
               Каталог
             </Link>
           </div>
+          <div className="catalog-categories">
+            <Categories chooseCategory={this.props.chooseCategory} />
+          </div>
 
-          <Categories chooseCategory={this.props.chooseCategory} />
           <div className="catalog-items">
             {this.props.items.map((el) => (
               <Item

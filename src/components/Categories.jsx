@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Categories.css";
 
 export class Categories extends Component {
   constructor(props) {
@@ -26,9 +27,10 @@ export class Categories extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="categories">
         {this.state.categories.map((el) => (
           <button
+            className="categories-button"
             key={el.key}
             onClick={() => this.props.chooseCategory(el.key)}
           >
